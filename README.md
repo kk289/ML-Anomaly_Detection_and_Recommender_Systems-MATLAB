@@ -35,7 +35,7 @@ We will implement the anomaly detection algorithm and apply it to detect failing
 
 [⋆] selectThreshold.m - Find a threshold for anomaly detection
 
-[⋆] cofiCostFunc.m - Implement the cost function for collaborative fil- tering
+[⋆] cofiCostFunc.m - Implement the cost function for collaborative filtering
 
 ## Anomaly Detection
 * Will update soon
