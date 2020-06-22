@@ -29,19 +29,18 @@ We will implement the anomaly detection algorithm and apply it to detect failing
 - loadMovieList.m - Loads the list of movies into a cell-array
 - movie_ids.txt - List of movies
 - normalizeRatings.m - Mean normalization for collaborative filtering 
-- submit.m - Submission script that sends your solutions to our servers 
+- submit.m - Submission script that sends code to our servers 
 
 [⋆] estimateGaussian.m - Estimate the parameters of a Gaussian distribution with a diagonal covariance matrix
 
 [⋆] selectThreshold.m - Find a threshold for anomaly detection
 
-[⋆] cofiCostFunc.m - Implement the cost function for collaborative filtering
+[⋆] cofiCostFunc.m - Implement the cost function for collaborative filtering  
 
 ## Anomaly Detection
 * Will update soon
 
 ## Course Links 
-
 1) Machine Learning by Stanford University on [Coursera](https://www.coursera.org/learn/machine-learning/home/week/9).
 
 2) [Anomaly Detection and Recommender Systems](https://www.coursera.org/learn/machine-learning/home/week/9)
