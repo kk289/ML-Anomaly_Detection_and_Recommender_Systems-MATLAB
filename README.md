@@ -90,8 +90,45 @@ We can see that most of the examples are in the region with the highest probabil
 the anomalous examples are in the regions with lower probabilities.
 
 ### Part 1.3: Selecting the threshold, ε
+As we estimate the Gaussian parameters, we can investigate which examples have a very high probability given this distribution and which examples have a very low probability. The low probability examples are more likely to be the anomalies in our dataset. One way to determine which examples are anomalies is to select a threshold based on a cross validation set.
 
+We will implement an algorithm to select the threshold ε using the F1 score on a cross validation set.
 
+##### selectThreshold.m
+```
+% Find a threshold for anomaly detection
+function [bestEpsilon bestF1] = selectThreshold(yval, pval)
+
+bestEpsilon = 0;
+bestF1 = 0;
+F1 = 0;
+
+stepsize = (max(pval) - min(pval)) / 1000;
+
+for epsilon = min(pval):stepsize:max(pval)
+    
+    tp = sum(((pval < epsilon) & (yval == 1))); % true positive
+    fp = sum(((pval < epsilon) & (yval == 0))); % false positive
+    fn = sum(((pval > epsilon) & (yval == 1))); % false negative
+    
+    prec = tp/(tp + fp); % precision
+    rec = tp/(tp + fn); % recall
+    
+    F1 = (2*prec*rec)/(prec + rec); % f1 score
+    
+    if F1 > bestF1
+       bestF1 = F1;
+       bestEpsilon = epsilon;
+    end
+end
+end
+```
+
+![threshold](Figure/threshold.jpg)
+- Figure: the classified anomalies
+Result: 
+Best epsilon found using cross-validation: 8.990853e-05   
+Best F1 on Cross Validation Set:  0.875000    
 
 ## Course Links 
 1) Machine Learning by Stanford University on [Coursera](https://www.coursera.org/learn/machine-learning/home/week/9).
