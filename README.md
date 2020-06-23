@@ -50,6 +50,13 @@ ex8.m
 ![dataset1](Figure/dataset1.jpg)
 - Figure: Visualize first dataset
 
+### Part 1.1: Gaussian Distribution
+To perform anomaly detection, we first need to fit a model to the data's distribution.  
+The Gaussian distribution:  
+![gaussian](Figure/gaussian.png)    
+where, μ is the mean and σ2 controls the variance.
+
+
 
 
 
