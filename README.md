@@ -200,7 +200,6 @@ Since we already finished implementing the collaborative filtering cost function
 Result: (we set lambda = 10, max interation = 100)
 
 ![movielist](Figure/movielist.png)
-- Figure: Movie Recommendations
 
 ## Course Links 
 1) Machine Learning by Stanford University on [Coursera](https://www.coursera.org/learn/machine-learning/home/week/9).
