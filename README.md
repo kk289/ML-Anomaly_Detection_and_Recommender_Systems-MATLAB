@@ -189,16 +189,15 @@ Theta_grad = Theta_grad + (lambda * Theta); % regularized for Theta term
 ```
 
 ### Part 2.3: Learning Movie recommendations
-Since we already finished implementing the collaborative filtering cost function and gradient, we can now start training your algorithm to make movie recommendation.
-
 The list of all movies and their number in the dataset:   
 ```
 movie_idx.list
 ```
+Since we already finished implementing the collaborative filtering cost function and gradient, we can now start training your algorithm to make movie recommendation.
 
-#### Recommendations
+![originial](Figure/original.png)
 
-Result: 
+Result: (we set lambda = 10, max interation = 100)
 
 ![movielist](Figure/movielist.png)
 - Figure: Movie Recommendations
