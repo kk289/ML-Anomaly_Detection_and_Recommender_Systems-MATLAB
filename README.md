@@ -56,6 +56,14 @@ The Gaussian distribution:
 ![gaussian](Figure/gaussian.png)    
 where, μ is the mean and σ2 controls the variance.
 
+### Part 1.2: Estimating parameters for a Gaussian
+we can estimate the parameters, (μi, σi^2), of the i-th feature by using the following equations.
+To estimate the mean,   
+![mean](Figure/mean.png)
+
+To estimate the variance,   
+![variance](Figure/variance.png)  
+
 
 
 
