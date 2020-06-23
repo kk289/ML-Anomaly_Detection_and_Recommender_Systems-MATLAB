@@ -37,7 +37,7 @@ We will implement the anomaly detection algorithm and apply it to detect failing
 
 [⋆] cofiCostFunc.m - Implement the cost function for collaborative filtering  
 
-## Anomaly Detection
+## Part 1: Anomaly Detection
 We will implement an anomaly detection algorithm to detect anomalous behavior in server computers. The features measure the through put (mb/s) and latency (ms) of response of each server. While our servers were operating, we collected m = 307 examples of how they were behaving, and thus have an unlabeled dataset {x(1),...,x(m)}. We suspect that the vast majority of these examples are “normal” (non-anomalous) examples of the servers operating normally, but there might also be some examples of servers acting anomalously within this dataset.
 
 We will use a Gaussian model to detect anomalous examples in dataset.
@@ -141,6 +141,33 @@ Best epsilon found using cross-validation: 1.377229e-18
 Best F1 on Cross Validation Set:  0.615385  
 Outliers (anomalies) found: 117   
 
+
+## Part 2: Recommender Systems
+Here, we implement the collaborative filtering learning algorithm and apply it to a dataset of movie rating. This dataset consists of ratings on a scale of 1 to 5. The dataset has n_u = 943 users, and n_m = 1682 movies.
+
+MATLAB script for this part:
+```
+ex8_cofi.m
+```
+
+We will implement the function *cofiCostFunc.m* that computes the collaborative fitlering objective function and gradient. Thenn fmincg.m to learn the parameters for collaborative filtering.
+
+##### cofiCostFunc.m
+The collaborative filtering cost function (without regularization): 
+![cost](Figure/cost.png)
+
+```
+% Implement the cost function for collaborative filtering
+diff = (X * Theta' - Y);
+J = (1/2) * sum(sum(diff .* diff .* R));
+```
+
+The gradient of the cost function (without regularization):
+![gradient](Figure/gradient.png)
+```
+X_grad = (diff .* R) * Theta;   % unregularized vectorized implementation
+Theta_grad = ((diff .* R)' * X); % unregularized vectorized implementation
+```
 
 
 
