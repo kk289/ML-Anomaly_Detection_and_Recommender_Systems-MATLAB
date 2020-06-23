@@ -130,6 +130,21 @@ Result:
 Best epsilon found using cross-validation: 8.990853e-05   
 Best F1 on Cross Validation Set:  0.875000    
 
+
+### Part 1.4: High dimensional dataset
+Here, we run the anomaly detection algorithm we already implemented on a more realistic and much harder dataset. In this dataset, each example is described by 11 features, capturing many more properties of compute servers.
+
+The script will use code to estimate the Gaussian parameters (μi and σi^2), evaluate the probabilities for both the training data X from which we estimated the Gaussian parameters, and do so for the the cross-validation set Xval.
+
+Result:   
+Best epsilon found using cross-validation: 1.377229e-18   
+Best F1 on Cross Validation Set:  0.615385  
+Outliers (anomalies) found: 117   
+
+
+
+
+
 ## Course Links 
 1) Machine Learning by Stanford University on [Coursera](https://www.coursera.org/learn/machine-learning/home/week/9).
 
