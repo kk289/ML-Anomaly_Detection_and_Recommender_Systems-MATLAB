@@ -124,11 +124,13 @@ end
 end
 ```
 
-![threshold](Figure/threshold.jpg)
-- Figure: the classified anomalies
-Result: 
+![threshold](Figure/threshold.jpg)  
+- Figure: the classified anomalies  
+
+Result:   
 Best epsilon found using cross-validation: 8.990853e-05   
 Best F1 on Cross Validation Set:  0.875000    
+
 
 
 ### Part 1.4: High dimensional dataset
