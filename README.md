@@ -164,8 +164,9 @@ diff = (X * Theta' - Y);
 J = (1/2) * sum(sum(diff .* diff .* R));
 ```
 
-The gradient of the cost function (without regularization):
-![gradient](Figure/gradient.png)
+The gradient of the cost function (without regularization):   
+![gradient](Figure/gradient.png)  
+
 ```
 X_grad = (diff .* R) * Theta;   % unregularized vectorized implementation
 Theta_grad = ((diff .* R)' * X); % unregularized vectorized implementation
