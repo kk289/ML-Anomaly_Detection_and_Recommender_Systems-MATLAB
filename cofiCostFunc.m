@@ -41,16 +41,14 @@ Theta_grad = zeros(size(Theta));
 % cost function
 diff = (X * Theta' - Y);
 J = (1/2) * sum(sum(diff .* diff .* R));
-%J = J + (lambda/2) * sum(sum(X.^2)); % X term
-%J = J + (lambda/2) * sum(sum(Theta.^2));  % theta term
+J = J + (lambda/2) * sum(sum(X.^2)); % X term
+J = J + (lambda/2) * sum(sum(Theta.^2));  % theta term
 
-X_grad = (diff .* R) * Theta;                 %unregularized vectorized implementation
-Theta_grad = ((diff .* R)' * X);              %unregularized vectorized implementation
+X_grad = (diff .* R) * Theta; % unregularized vectorized implementation
+Theta_grad = ((diff .* R)' * X); % unregularized vectorized implementation
 
-% X_grad = X_grad + (lambda * X);             % regularized
-% Theta_grad = Theta_grad + (lambda * Theta);  % regularized
-
-% J = 1/2 * (Theta' - Y);
+X_grad = X_grad + (lambda * X);  % regularized for X term
+Theta_grad = Theta_grad + (lambda * Theta); % regularized for Theta term
 
 grad = [X_grad(:); Theta_grad(:)];
 
