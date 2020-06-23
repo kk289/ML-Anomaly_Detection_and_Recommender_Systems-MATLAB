@@ -172,6 +172,21 @@ X_grad = (diff .* R) * Theta;   % unregularized vectorized implementation
 Theta_grad = ((diff .* R)' * X); % unregularized vectorized implementation
 ```
 
+Now, we implement the regularized cost function:    
+![cost_reg](Figure/reg_cost.png)
+```
+% regularized cost function
+J = J + (lambda/2) * sum(sum(X.^2)); % X term
+J = J + (lambda/2) * sum(sum(Theta.^2));  % theta term
+```
+
+Implementing the regularized gradient function:   
+![cost_gradient](Figure/reg_gradient.png)   
+```
+% regularized gradient function
+X_grad = X_grad + (lambda * X);  % regularized for X term
+Theta_grad = Theta_grad + (lambda * Theta); % regularized for Theta term
+```
 
 
 
