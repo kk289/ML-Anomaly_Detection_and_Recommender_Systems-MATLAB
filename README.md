@@ -64,9 +64,32 @@ To estimate the mean,
 To estimate the variance,   
 ![variance](Figure/variance.png)  
 
+##### estimateGaussian.m
+```
+% Estimate the parameters of a Gaussian distribution with a diagonal covariance matrix
 
+function [mu sigma2] = estimateGaussian(X)
 
+% Useful variables
+[m, n] = size(X);
 
+% Should return these values correctly
+mu = zeros(n, 1);
+sigma2 = zeros(n, 1);
+
+mu = 1/m * sum(X,1);
+sigma2 = 1/m * sum((X - mu).^2, 1);
+
+end
+```
+
+![gaussian](Figure/gaussianfit.jpg)
+- Figure: The Gaussian distribution contours of the distribution fit to the dataset
+
+We can see that most of the examples are in the region with the highest probability, while
+the anomalous examples are in the regions with lower probabilities.
+
+### Part 1.3: Selecting the threshold, ε
 
 
 
